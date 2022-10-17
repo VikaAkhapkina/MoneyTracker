@@ -8,9 +8,6 @@
 import UIKit
 import RealmSwift
 
-protocol AddRecordViewControllerDelegate: AnyObject {
-    func expenseAdded(expense: Expense)
-}
 
 class AddRecordViewController: UIViewController {
 
@@ -29,8 +26,6 @@ class AddRecordViewController: UIViewController {
     }()
     
     private var selectedDate: Date?
-    
-    weak var delegate: AddRecordViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

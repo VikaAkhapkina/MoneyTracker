@@ -44,18 +44,9 @@ class ExpensesTableViewController: UIViewController {
     @IBAction func addButtenPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let destionation = storyboard.instantiateViewController(withIdentifier: "AddRecordViewController") as? AddRecordViewController else { return }
-        destionation.delegate = self
         navigationController?.pushViewController(destionation, animated: true)
         
         }
-}
-
-extension ExpensesTableViewController: AddRecordViewControllerDelegate {
-    func expenseAdded(expense: Expense) {
-        dataSourse.append(expense)
-        tableView.reloadData()
-        
-    }
 }
 
 extension ExpensesTableViewController: UITableViewDelegate {
