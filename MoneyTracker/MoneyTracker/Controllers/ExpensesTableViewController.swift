@@ -10,6 +10,7 @@ import UIKit
 class ExpensesTableViewController: UIViewController {
     
     var expenses: [[Expense]] = [[], []]
+    var expensesCategory = [ExpenseCategory]()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -70,6 +71,8 @@ extension ExpensesTableViewController: UITableViewDataSource {
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return expenses[section].count
         }
+        func numberOfSections(in tableView: UITableView) -> Int {
+           return expenses.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -83,6 +86,7 @@ extension ExpensesTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? { // свайп
         let action = UIContextualAction(style: .normal, title: "Delete") { _, _, completion in
+            self.expenses[indexPath.section].remove(at: indexPath.row)
             tableView.reloadData()
             completion(true)
         }
@@ -92,3 +96,4 @@ extension ExpensesTableViewController: UITableViewDataSource {
 
 
 
+}
