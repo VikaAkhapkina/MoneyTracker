@@ -29,13 +29,10 @@ class TaskCell: UITableViewCell {
     
     func setup (expense: Expense) {
         titleLabel.text = expense.name
-//        priceLabel.text = expense.price
-//        dateLabel.text = expense.date
-//        if expense.category {
-//            isDoneImage.image = UIImage(systemName: "checkmark")
-//        } else {
-//            isDoneImage.image = nil
-//        }
+        priceLabel.text = String(expense.price) + "$"
+        let  dateFormater = DateFormatter()
+        dateFormater.dateStyle = .medium
+        dateLabel.text = dateFormater.string(from: expense.date)
     }
     
 }

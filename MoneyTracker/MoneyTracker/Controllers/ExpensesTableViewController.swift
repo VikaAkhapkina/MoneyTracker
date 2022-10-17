@@ -6,20 +6,31 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ExpensesTableViewController: UIViewController {
-    
-    var expenses: [[Expense]] = [[], []]
-    var expensesCategory = [ExpenseCategory]()
+
 
     @IBOutlet weak var tableView: UITableView!
     
     private var dataSourse = [Expense]()
     
+    private let realManager = RealmManager()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTable()
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        readDate()
+    }
+    
+    func readDate() {
+        dataSourse = realManager.getExpenses()
+        tableView.reloadData()
     }
     
     func setupTable() {
@@ -41,58 +52,60 @@ class ExpensesTableViewController: UIViewController {
 
 extension ExpensesTableViewController: AddRecordViewControllerDelegate {
     func expenseAdded(expense: Expense) {
-        expenses[0].append(expense)
+        dataSourse.append(expense)
         tableView.reloadData()
         
     }
 }
 
 extension ExpensesTableViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var expense = expenses[indexPath.section][indexPath.row]
-        expense.category.self
-        expenses[indexPath.section].remove(at: indexPath.row)
-      
-        let newSetion = indexPath.section == 0 ? 1 : 0
-        expenses[newSetion].append(expense)
-        tableView.reloadData()
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        var expense = expenses[indexPath.section][indexPath.row]
+//        expense.category.self
+//        dataSourse[indexPath.section].remove(at: indexPath.row)
+//
+//        let newSetion = indexPath.section == 0 ? 1 : 0
+//        expenses[newSetion].append(expense)
+//        tableView.reloadData()
+//    }
 }
 
 extension ExpensesTableViewController: UITableViewDataSource {
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TaskCell.identificator, for: indexPath)
-            let array = expenses[indexPath.section]
-            let expense = array[indexPath.row]
+           guard let cell = tableView.dequeueReusableCell(withIdentifier: TaskCell.identificator, for: indexPath) as? TaskCell else { return UITableViewCell()
+            }
+            let expense = dataSourse[indexPath.row]
+    cell.setup(expense: expense)
             return cell
 
         }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return expenses[section].count
+            return dataSourse.count
         }
-        func numberOfSections(in tableView: UITableView) -> Int {
-           return expenses.count
-    }
+//        func numberOfSections(in tableView: UITableView) -> Int {
+//           return expenses.count
+//    }
+
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Pending"
-        } else {
-            return "Done"
-        }
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        if section == 0 {
+//            return "Pending"
+//        } else {
+//            return "Done"
+//        }
+//    }
     
     
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? { // свайп
-        let action = UIContextualAction(style: .normal, title: "Delete") { _, _, completion in
-            self.expenses[indexPath.section].remove(at: indexPath.row)
-            tableView.reloadData()
-            completion(true)
-        }
-        action.backgroundColor = .red
-        return UISwipeActionsConfiguration(actions: [action])
-    }
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? { // свайп
+//        let action = UIContextualAction(style: .normal, title: "Delete") { _, _, completion in
+//            self.expenses[indexPath.section].remove(at: indexPath.row)
+//            tableView.reloadData()
+//            completion(true)
+//        }
+//        action.backgroundColor = .red
+//        return UISwipeActionsConfiguration(actions: [action])
+//    }
 
 
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol AddRecordViewControllerDelegate: AnyObject {
     func expenseAdded(expense: Expense)
@@ -17,6 +18,8 @@ class AddRecordViewController: UIViewController {
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var categorySegment: UISegmentedControl!
+    
+    private let realManager = RealmManager()
     
     private lazy var datePicker: UIDatePicker = {
       let datePicker = UIDatePicker(frame: .zero)
@@ -64,9 +67,7 @@ class AddRecordViewController: UIViewController {
             return
               }
         let category = getCategory()
-        
-        let expense = Expense(name: title, price: price, date: date, category: category)
-        delegate?.expenseAdded(expense: expense)
+        realManager.saveExpense(name: title, price: price, date: date, category: category)
         navigationController?.popViewController(animated: true)
     }
     

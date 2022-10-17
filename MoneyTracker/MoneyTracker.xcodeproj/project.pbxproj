@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F7DBCE5FBD0AD363744F3F0 /* Pods_MoneyTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98791EDD767C015C081D61AD /* Pods_MoneyTracker.framework */; };
+		E63B6F2528FDCE6C00A61D70 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B6F2428FDCE6C00A61D70 /* RealmManager.swift */; };
 		E6507D2A28F4933D00DCB261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6507D2928F4933D00DCB261 /* AppDelegate.swift */; };
 		E6507D2C28F4933D00DCB261 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6507D2B28F4933D00DCB261 /* SceneDelegate.swift */; };
 		E6507D2E28F4933D00DCB261 /* ExpensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6507D2D28F4933D00DCB261 /* ExpensesTableViewController.swift */; };
@@ -20,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2330EC639D8714EEF36382DD /* Pods-MoneyTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyTracker.release.xcconfig"; path = "Target Support Files/Pods-MoneyTracker/Pods-MoneyTracker.release.xcconfig"; sourceTree = "<group>"; };
+		3540776E6D2D87EECA576492 /* Pods-MoneyTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyTracker.debug.xcconfig"; path = "Target Support Files/Pods-MoneyTracker/Pods-MoneyTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		98791EDD767C015C081D61AD /* Pods_MoneyTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E63B6F2428FDCE6C00A61D70 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		E6507D2628F4933D00DCB261 /* MoneyTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6507D2928F4933D00DCB261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6507D2B28F4933D00DCB261 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,17 +45,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F7DBCE5FBD0AD363744F3F0 /* Pods_MoneyTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19F257C2D01EE7A25A3DDDFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98791EDD767C015C081D61AD /* Pods_MoneyTracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C51B97493CAFC228E1858759 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3540776E6D2D87EECA576492 /* Pods-MoneyTracker.debug.xcconfig */,
+				2330EC639D8714EEF36382DD /* Pods-MoneyTracker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E63B6F2328FDCE3700A61D70 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E63B6F2428FDCE6C00A61D70 /* RealmManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		E6507D1D28F4933C00DCB261 = {
 			isa = PBXGroup;
 			children = (
 				E6507D2828F4933D00DCB261 /* MoneyTracker */,
 				E6507D2728F4933D00DCB261 /* Products */,
+				C51B97493CAFC228E1858759 /* Pods */,
+				19F257C2D01EE7A25A3DDDFE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +98,7 @@
 		E6507D2828F4933D00DCB261 /* MoneyTracker */ = {
 			isa = PBXGroup;
 			children = (
+				E63B6F2328FDCE3700A61D70 /* Services */,
 				E68BE1D428F5CD7700E417AD /* Cell */,
 				E6EDF37D28F49621002F42EF /* Controllers */,
 				E6EDF37A28F493C5002F42EF /* Models */,
@@ -110,9 +145,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6507D3A28F4933E00DCB261 /* Build configuration list for PBXNativeTarget "MoneyTracker" */;
 			buildPhases = (
+				4638836EB9E6089A5F4ACBD0 /* [CP] Check Pods Manifest.lock */,
 				E6507D2228F4933D00DCB261 /* Sources */,
 				E6507D2328F4933D00DCB261 /* Frameworks */,
 				E6507D2428F4933D00DCB261 /* Resources */,
+				07EFF91B90E2791EED4E7468 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,6 +207,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07EFF91B90E2791EED4E7468 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyTracker/Pods-MoneyTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyTracker/Pods-MoneyTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyTracker/Pods-MoneyTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4638836EB9E6089A5F4ACBD0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoneyTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E6507D2228F4933D00DCB261 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -180,6 +259,7 @@
 				E6507D2A28F4933D00DCB261 /* AppDelegate.swift in Sources */,
 				E6EDF37F28F49695002F42EF /* AddRecordViewController.swift in Sources */,
 				E650DACE28F5DFD100DA5936 /* TaskCell.swift in Sources */,
+				E63B6F2528FDCE6C00A61D70 /* RealmManager.swift in Sources */,
 				E6507D2C28F4933D00DCB261 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +402,7 @@
 		};
 		E6507D3B28F4933E00DCB261 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3540776E6D2D87EECA576492 /* Pods-MoneyTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -350,6 +431,7 @@
 		};
 		E6507D3C28F4933E00DCB261 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2330EC639D8714EEF36382DD /* Pods-MoneyTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
