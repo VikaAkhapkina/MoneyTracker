@@ -66,7 +66,7 @@ extension ExpensesTableViewController: UITableViewDataSource {
            guard let cell = tableView.dequeueReusableCell(withIdentifier: TaskCell.identificator, for: indexPath) as? TaskCell else { return UITableViewCell()
             }
             let expense = dataSourse[indexPath.row]
-    cell.setup(expense: expense)
+            cell.setup(expense: expense)
             return cell
 
         }
@@ -88,16 +88,15 @@ extension ExpensesTableViewController: UITableViewDataSource {
 //    }
     
     
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? { // свайп
-//        let action = UIContextualAction(style: .normal, title: "Delete") { _, _, completion in
-//            self.expenses[indexPath.section].remove(at: indexPath.row)
-//            tableView.reloadData()
-//            completion(true)
-//        }
-//        action.backgroundColor = .red
-//        return UISwipeActionsConfiguration(actions: [action])
-//    }
-
-
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? { // свайп
+        let action = UIContextualAction(style: .normal, title: "Delete") { _, _, completion in
+            self.realManager.deleteExpense(id: self.dataSourse[indexPath.row].id) // чтобы удалялось из real
+            self.dataSourse.remove(at: indexPath.row)
+            tableView.reloadData()
+            completion(true)
+        }
+        action.backgroundColor = .red
+        return UISwipeActionsConfiguration(actions: [action])
+    }
 
 }
