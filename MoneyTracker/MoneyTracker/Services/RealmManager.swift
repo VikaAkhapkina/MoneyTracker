@@ -30,4 +30,15 @@ class RealmManager {
         }
         return resalt
     }
+    
+    func deleteExpense(id: String) {
+        guard let key = try? ObjectId(string: id),
+        let expense = realm.object(ofType: ExpenseRealmModel.self, forPrimaryKey: key)
+        else { return }
+
+        try! realm.write({
+            realm.delete(expense)
+        })
+    }
+
 }
