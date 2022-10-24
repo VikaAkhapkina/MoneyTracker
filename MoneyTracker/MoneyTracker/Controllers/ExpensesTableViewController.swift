@@ -90,6 +90,7 @@ extension ExpensesTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? { // свайп
         let action = UIContextualAction(style: .normal, title: "Delete") { _, _, completion in
+            self.realManager.deleteExpense(id: self.dataSourse[indexPath.row].id) // чтобы удалялось из real
             self.dataSourse.remove(at: indexPath.row)
             tableView.reloadData()
             completion(true)
