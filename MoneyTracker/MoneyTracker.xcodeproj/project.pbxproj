@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6F7DBCE5FBD0AD363744F3F0 /* Pods_MoneyTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98791EDD767C015C081D61AD /* Pods_MoneyTracker.framework */; };
+		E6009F7729070F9A006AA13E /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6009F7629070F9A006AA13E /* ChartViewController.swift */; };
+		E6009F79290D64CF006AA13E /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6009F78290D64CF006AA13E /* Calculate.swift */; };
 		E63B6F2528FDCE6C00A61D70 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63B6F2428FDCE6C00A61D70 /* RealmManager.swift */; };
 		E6507D2A28F4933D00DCB261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6507D2928F4933D00DCB261 /* AppDelegate.swift */; };
 		E6507D2C28F4933D00DCB261 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6507D2B28F4933D00DCB261 /* SceneDelegate.swift */; };
@@ -17,6 +19,7 @@
 		E6507D3628F4933E00DCB261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6507D3428F4933E00DCB261 /* LaunchScreen.storyboard */; };
 		E650DACE28F5DFD100DA5936 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650DACC28F5DFD100DA5936 /* TaskCell.swift */; };
 		E650DACF28F5DFD100DA5936 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E650DACD28F5DFD100DA5936 /* TaskCell.xib */; };
+		E6D49F012906F59E0031C90A /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D49F002906F59E0031C90A /* StatisticViewController.swift */; };
 		E6EDF37C28F493F5002F42EF /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EDF37B28F493F5002F42EF /* Expense.swift */; };
 		E6EDF37F28F49695002F42EF /* AddRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EDF37E28F49695002F42EF /* AddRecordViewController.swift */; };
 /* End PBXBuildFile section */
@@ -25,6 +28,8 @@
 		2330EC639D8714EEF36382DD /* Pods-MoneyTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyTracker.release.xcconfig"; path = "Target Support Files/Pods-MoneyTracker/Pods-MoneyTracker.release.xcconfig"; sourceTree = "<group>"; };
 		3540776E6D2D87EECA576492 /* Pods-MoneyTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyTracker.debug.xcconfig"; path = "Target Support Files/Pods-MoneyTracker/Pods-MoneyTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		98791EDD767C015C081D61AD /* Pods_MoneyTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6009F7629070F9A006AA13E /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		E6009F78290D64CF006AA13E /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
 		E63B6F2428FDCE6C00A61D70 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		E6507D2628F4933D00DCB261 /* MoneyTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6507D2928F4933D00DCB261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +41,7 @@
 		E6507D3728F4933E00DCB261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E650DACC28F5DFD100DA5936 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		E650DACD28F5DFD100DA5936 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
+		E6D49F002906F59E0031C90A /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		E6EDF37B28F493F5002F42EF /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		E6EDF37E28F49695002F42EF /* AddRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				E63B6F2428FDCE6C00A61D70 /* RealmManager.swift */,
+				E6009F78290D64CF006AA13E /* Calculate.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -108,6 +115,8 @@
 				E6507D3228F4933E00DCB261 /* Assets.xcassets */,
 				E6507D3428F4933E00DCB261 /* LaunchScreen.storyboard */,
 				E6507D3728F4933E00DCB261 /* Info.plist */,
+				E6D49F002906F59E0031C90A /* StatisticViewController.swift */,
+				E6009F7629070F9A006AA13E /* ChartViewController.swift */,
 			);
 			path = MoneyTracker;
 			sourceTree = "<group>";
@@ -259,8 +268,11 @@
 				E6507D2A28F4933D00DCB261 /* AppDelegate.swift in Sources */,
 				E6EDF37F28F49695002F42EF /* AddRecordViewController.swift in Sources */,
 				E650DACE28F5DFD100DA5936 /* TaskCell.swift in Sources */,
+				E6009F79290D64CF006AA13E /* Calculate.swift in Sources */,
+				E6009F7729070F9A006AA13E /* ChartViewController.swift in Sources */,
 				E63B6F2528FDCE6C00A61D70 /* RealmManager.swift in Sources */,
 				E6507D2C28F4933D00DCB261 /* SceneDelegate.swift in Sources */,
+				E6D49F012906F59E0031C90A /* StatisticViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,6 +39,7 @@ class AddRecordViewController: UIViewController {
     }
     
     func setup() {
+        view.backgroundColor = #colorLiteral(red: 0.8289679289, green: 0.8731831908, blue: 1, alpha: 1)
         priceTextField.keyboardType = .decimalPad //клавитура где только числа и точка
         dateTextField.inputView = datePicker
           datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)

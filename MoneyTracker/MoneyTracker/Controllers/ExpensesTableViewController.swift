@@ -34,6 +34,7 @@ class ExpensesTableViewController: UIViewController {
     }
     
     func setupTable() {
+        view.backgroundColor = #colorLiteral(red: 0.8475143313, green: 0.8614425063, blue: 1, alpha: 1)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 70
